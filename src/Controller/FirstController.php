@@ -14,15 +14,30 @@ class FirstController extends AbstractController
         return new Response("
         <html><body>$mavar<body></html> ");
     }
-    #[Route('/first/{name}/{firstname}', name: 'first')]
-    public function sayHello(\Symfony\Component\HttpFoundation\Request $request,$name,$firstname): Response
+ #[Route('/first/', name: 'first')]
+    public function sayHello(\Symfony\Component\HttpFoundation\Request $request): Response
     {
 
-       return  $this->render('first/hello.html.twig', [
-           'nom'=>$name,
-           'prenom'=>$firstname
+       return  $this->render('first/index.html.twig', [
+           'nom'=>"Moataz",
+           'prenom'=>"Chaabane",
+
 
        ]);
+
+
+    }
+    #[Route('/first/', name: 'say')]
+    public function say(\Symfony\Component\HttpFoundation\Request $request): Response
+    {
+
+        return  $this->render('first/hello.html.twig', [
+            'nom'=>"Moataz",
+            'prenom'=>"Chaabane",
+
+
+        ]);
+
 
     }
     #[route('multi/{e1<\d+>}/{e2<\d+>}',
@@ -32,6 +47,13 @@ class FirstController extends AbstractController
     public function multiplication($e1,$e2){
         $resultat=$e1*$e2;
     return new Response("<h1>$resultat</h1>");
+    }
+    #[route('template',
+        name:"template",
+
+    )]
+    public function template(){
+        return $this ->render('template.html.twig');
     }
 
 }

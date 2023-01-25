@@ -1,15 +1,10 @@
-<!doctype html>
-<html lanfg="html">
-<head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <title>{{ firstName}} {{ name }}</title>
-    <? php echo  ?>
-</head>
-<body>
-<div>
-    <h1>with love {{ firstName }} {{ name }}</h1>
+{% extends 'template.html.twig' %}
+{% block title %}
+    <title>tt</title> {% endblock %}
+
+{% block body %}
+
+    <h1>with love Moataz CHAABANE</h1>
     <p>Bonjour Techwall</p>
-</div>
-</body>
-</html>
+    Mon ur absoolue est {{ url('first') }}
+{% endblock  %}

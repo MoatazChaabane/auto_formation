@@ -1,0 +1,11 @@
+{% extends 'heritage.html.twig' %}
+{% block titreDuDocument %}
+    nouveau titre
+{% endblock %}
+{% block corpDuDocument %}
+    {{ parent() }}
+<ol>
+
+    <li>nouveau cotenu</li>
+    <li>c'est l'héritage</li>
+</ol>{% endblock %}
